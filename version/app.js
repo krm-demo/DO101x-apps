@@ -7,7 +7,7 @@ app = express();
 app.get('/', function (req, res) {
 
     var response = 
-        `Thie version of app is "${pjson.version}".<br/>\n` +
+        `This version of app is "${pjson.version}" - #3 after web-hook.<br/>\n` +
         `host-name is "${os.hostname()}".\n`;
 
     response += "<hr/>\n"
