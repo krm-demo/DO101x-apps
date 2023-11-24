@@ -90,6 +90,3 @@ public
 
 # DynamoDB Local files
 .dynamodb/
-
-# ----- my local GIT-ignores: -----
-package-lock.json
