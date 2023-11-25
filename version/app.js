@@ -78,23 +78,27 @@ app.listen(8080, function () {
     console.log("----------- package.json: -------------")
     console.dir(pjson);
     console.log("----------- os.xxxx(): ----------------")
-    console.dir({
-        "os.arch()": os.arch(),
-        "os.availableParallelism()": os.availableParallelism(),
-        "os.endianness()": os.endianness(),
-        "os.freemem()": os.freemem(),
-        "os.getPriority()": os.getPriority(),
-        "os.homedir()": os.homedir(),
-        "os.hostname()": os.hostname(),
-        "os.loadavg()": os.loadavg(),
-        "os.platform()": os.platform(),
-        "os.release()": os.release(),
-        "os.tmpdir()": os.tmpdir(),
-        "os.totalmem()": os.totalmem(),
-        "os.userInfo()": os.userInfo(),
-        "os.uptime()": os.uptime(),
-        "os.version()": os.version(),
-        "os.machine()": os.machine()
-    });
+    try {
+        console.dir({
+            "os.arch()": os.arch(),
+            "os.availableParallelism": os.availableParallelism,
+            "os.endianness()": os.endianness(),
+            "os.freemem()": os.freemem(),
+            "os.getPriority()": os.getPriority(),
+            "os.homedir()": os.homedir(),
+            "os.hostname()": os.hostname(),
+            "os.loadavg()": os.loadavg(),
+            "os.platform()": os.platform(),
+            "os.release()": os.release(),
+            "os.tmpdir()": os.tmpdir(),
+            "os.totalmem()": os.totalmem(),
+            "os.userInfo()": os.userInfo(),
+            "os.uptime()": os.uptime(),
+            "os.version()": os.version(),
+            "os.machine()": os.machine()
+        });
+    } catch (ex) {
+        console.log(e)
+    }
     console.log('Server listening on port 8080... let\'s go!');
 });
