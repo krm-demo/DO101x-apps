@@ -44,7 +44,7 @@ var HTML_HEAD = `
 
 <script type="text/javascript">
 window.addEventListener("load", (event) => {
-    document.querySelector("#cookie-elem").textContent = document.cookie;
+    document.querySelector("#cookie-elem").innerHTML = document.cookie.replaceAll(";",";\n");
     console.log(event);
 });
 </script>
@@ -52,7 +52,7 @@ window.addEventListener("load", (event) => {
 </head>
 <body>
 
-<h3>A Samle NODE.JS application (version "${pjson.version}") la-la-la</h3>
+<h3>A Samle NODE.JS application (version "${pjson.version}")</h3>
 `
 
 var HTML_FOOT = `
@@ -63,7 +63,7 @@ var HTML_FOOT = `
 app.get('/', function (req, res) {
 
     var response = 
-        `This order of updated build - #7.<br/>\n` +
+        `This name of the build is - <b>"${process.env.OPENSHIFT_BUILD_NAME}"</b>.<br/>\n` +
         `host-name is <code>${os.hostname()}</code>.<br/>\n`;
         
     response += "<hr/>\n"
