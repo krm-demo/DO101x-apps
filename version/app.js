@@ -31,11 +31,28 @@ var HTML_HEAD = `
   background-color: #04AA6D;
   color: white;
 }
+
+#env-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #FAFAFD;
+    color: white;
+}
+
 </style>
+
+<script type="text/javascript">
+window.addEventListener("load", (event) => {
+    document.querySelector("#cookie-elem").textContent = document.cookie;
+    console.log(event);
+});
+</script>
+
 </head>
 <body>
 
-<h3>A Samle NODE.JS application (version "${pjson.version}")</h3>
+<h3>A Samle NODE.JS application (version "${pjson.version}") la-la-la</h3>
 `
 
 var HTML_FOOT = `
@@ -47,7 +64,10 @@ app.get('/', function (req, res) {
 
     var response = 
         `This order of updated build - #7.<br/>\n` +
-        `host-name is <code>${os.hostname()}</code>.\n`;
+        `host-name is <code>${os.hostname()}</code>.<br/>\n`;
+        
+    response += "<hr/>\n"
+    response += `<pre id="cookie-elem">cookie should be here after loading the page</pre>\n`
 
     response += "<hr/>\n"
     response += "<pre>\n"
