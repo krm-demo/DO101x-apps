@@ -44,7 +44,7 @@ var HTML_HEAD = `
 
 <script type="text/javascript">
 window.addEventListener("load", (event) => {
-    document.querySelector("#cookie-elem").innerHTML = document.cookie.replaceAll(";",";\n");
+    document.querySelector("#cookie-elem").innerHTML = document.cookie.replaceAll(";",";\\n");
     console.log(event);
 });
 </script>
