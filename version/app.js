@@ -32,7 +32,7 @@ var HTML_HEAD = `
   color: white;
 }
 
-#env-table th {
+#cookie-elem {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
